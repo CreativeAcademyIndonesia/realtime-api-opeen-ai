@@ -39,17 +39,17 @@ const App: React.FC = () => {
   }, [registerFunction])
 
   return (
-    <main className="h-full">
+    <main className="h-screen flex items-center w-full">
         {/* <Transcriber conversation={conversation} /> */}
       <motion.div 
-        className="container flex flex-col items-center justify-center mx-auto max-w-3xl my-20 p-12 border rounded-lg shadow-xl"
+        className="container flex flex-col items-center justify-center mx-auto max-w-4xl p-12 border rounded-lg shadow-xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <Hero />
         <motion.div 
-          className="w-full max-w-md bg-card text-card-foreground rounded-xl border shadow-sm p-6 space-y-4"
+          className="w-full max-w-2xl bg-card text-card-foreground rounded-xl border shadow-sm p-6 space-y-4"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
