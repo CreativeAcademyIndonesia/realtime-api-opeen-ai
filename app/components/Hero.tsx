@@ -1,8 +1,4 @@
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { GithubIcon } from "lucide-react"
-import Link from "next/link"
-
 export function Hero() {
   return (
     <div className="text-center mb-8 rounded-lg p-4">

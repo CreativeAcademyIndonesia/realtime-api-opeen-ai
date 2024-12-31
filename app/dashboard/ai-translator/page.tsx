@@ -4,14 +4,12 @@ import React, { useEffect, useState } from "react"
 import useWebRTCAudioSession from "@/hooks/use-webrtc"
 import { tools } from "@/lib/tools"
 import { Hero } from "@/app/components/Hero"
-import { VoiceSelector } from "@/app/components/VoiceSelector"
 import { BroadcastButton } from "@/app/components/BroadcastButton"
 import { StatusDisplay } from "@/app/components/StatusDisplay"
 import { TokenUsageDisplay } from "@/app/components/TokenUsageDisplay"
 import { MessageControls } from "@/app/components/MessageControls"
 import { motion } from "framer-motion"
 import { timeFunction, backgroundFunction, partyFunction, launchWebsite, takeScreenshot, copyToClipboard } from "@/app/components/tools-functions"
-import Transcriber from "@/app/components/Transcriber";
 import { DrawerConfiguration } from "@/app/components/Drawer"
 
 const App: React.FC = () => {

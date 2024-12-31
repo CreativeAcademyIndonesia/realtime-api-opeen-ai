@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/header";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
-import Script from 'next/script';
 import { Toaster } from "@/components/ui/sonner"
 // import { Analytics } from "@vercel/analytics/react"
 
