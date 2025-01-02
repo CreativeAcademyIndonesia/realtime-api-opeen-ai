@@ -25,6 +25,11 @@ interface UseWebRTCAudioSessionReturn {
   msgs: any[];
   currentVolume: number;
   conversation: Conversation[];
+
+  languageOne: string;
+  languageTwo: string;
+  setLanguageOne: (language: string) => void;
+  setLanguageTwo: (language: string) => void;
 }
 
 /**
@@ -37,6 +42,8 @@ export default function useWebRTCAudioSession(
   // Connection/session states
   const [status, setStatus] = useState("");
   const [isSessionActive, setIsSessionActive] = useState(false);
+  const [languageOne, setLanguageOne] = useState("English");
+  const [languageTwo, setLanguageTwo] = useState("Indonesian");
 
   // Audio references for local mic
   // Approach A: explicitly typed as HTMLDivElement | null
@@ -295,6 +302,10 @@ export default function useWebRTCAudioSession(
       const response = await fetch("/api/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          languageOne,
+          languageTwo
+        })
       });
       if (!response.ok) {
         throw new Error(`Failed to get ephemeral token: ${response.status}`);
@@ -499,5 +510,9 @@ export default function useWebRTCAudioSession(
     msgs,
     currentVolume,
     conversation,
+    languageOne,
+    languageTwo,
+    setLanguageOne,
+    setLanguageTwo
   };
 }

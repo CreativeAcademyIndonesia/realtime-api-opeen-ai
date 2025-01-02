@@ -23,7 +23,11 @@ const App: React.FC = () => {
     registerFunction,
     handleStartStopClick,
     msgs,
-    conversation
+    conversation, 
+    languageOne,
+    languageTwo,
+    setLanguageOne,
+    setLanguageTwo 
   } = useWebRTCAudioSession(voice, tools)
 
   useEffect(() => {
@@ -58,7 +62,14 @@ const App: React.FC = () => {
               isSessionActive={isSessionActive} 
               onClick={handleStartStopClick}
             />
-            <DrawerConfiguration value={voice} onValueChange={setVoice} />
+            <DrawerConfiguration 
+            value={voice} 
+            onValueChange={setVoice} 
+            languageOne={languageOne}
+            languageTwo={languageTwo}
+            setLanguageOne={setLanguageOne}
+            setLanguageTwo={setLanguageTwo}
+            />
           </div>
           
           {status && (
